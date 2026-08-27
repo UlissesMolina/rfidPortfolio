@@ -59,7 +59,7 @@
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-4xl font-bold text-center text-black dark:text-white sm:text-left"
+          className="text-4xl font-bold text-white sm:text-left"
         >
           {profileName}
         </motion.h1>
@@ -67,7 +67,7 @@
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-4 text-lg text-gray-600 dark:text-gray-400"
+          className="mt-4 text-lg text-zinc-400"
         >
           {profileDescription}
         </motion.p>
@@ -103,7 +103,7 @@
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-10 pt-8 border-t border-white/30 w-full text-2xl font-semibold text-black dark:text-white"
+          className="mt-10 pt-8 border-t border-zinc-800 w-full text-2xl font-semibold text-white"
         >
           Experience
         </motion.h2>
@@ -115,18 +115,18 @@
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 + index * 0.15 }}
             >
-              <Card>
+              <Card className="bg-zinc-900/60 border border-zinc-800">
                 <CardHeader>
                   <div className="flex items-center justify-between">
-                    <CardTitle>{exp.role}</CardTitle>
+                    <CardTitle className="text-zinc-400">{exp.role}</CardTitle>
                     {exp.time && (
-                      <span className="text-sm text-muted-foreground whitespace-nowrap ml-4">{exp.time}</span>
+                      <span className="text-sm text-zinc-400 whitespace-nowrap ml-4">{exp.time}</span>
                     )}
                   </div>
-                  <CardDescription className="text-base font-medium">{exp.company}</CardDescription>
+                  <CardDescription className="text-base font-medium text-white">{exp.company}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground">{exp.description}</p>
+                  <p className="text-sm text-zinc-500">{exp.description}</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -137,7 +137,7 @@
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-10 pt-8 border-t border-white/30 w-full text-2xl font-semibold text-black dark:text-white"
+          className="mt-10 pt-8 border-t border-zinc-800 w-full text-2xl font-semibold text-white"
         >
           Projects
         </motion.h2>
@@ -151,18 +151,18 @@
               className="w-full"
             >
               <a href={project.url} target="_blank" rel="noopener noreferrer" className="block">
-                <Card className="overflow-hidden transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg cursor-pointer">
+                <Card className="overflow-hidden bg-zinc-900/60 border border-zinc-800 transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg cursor-pointer">
                   <img src={project.image} alt={project.title} className="w-full h-40 object-cover" />
                   <CardHeader className="pb-2">
-                    <CardTitle className="text-lg font-bold">{project.title}</CardTitle>
-                    <CardDescription className="text-sm">{project.description}</CardDescription>
+                    <CardTitle className="text-lg font-bold text-white">{project.title}</CardTitle>
+                    <CardDescription className="text-sm text-zinc-500">{project.description}</CardDescription>
                   </CardHeader>
                   {project.stack && (
                     <CardContent className="flex flex-wrap gap-3 pt-0">
                       {project.stack.split(", ").map((tech) => {
                         const Icon = techIcons[tech];
                         return (
-                          <div key={tech} className="flex items-center gap-1.5 text-muted-foreground" title={tech}>
+                          <div key={tech} className="flex items-center gap-1.5 text-zinc-400" title={tech}>
                             {Icon && <Icon className="w-5 h-5" />}
                             <span className="text-xs">{tech}</span>
                           </div>
@@ -179,7 +179,7 @@
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 1 }}
-          className="mt-10 text-sm text-muted-foreground text-center w-full"
+          className="mt-10 text-sm text-zinc-500 text-center w-full"
         >
           Ulisses Molina © {new Date().getFullYear()}. All rights reserved.
         </motion.div>
